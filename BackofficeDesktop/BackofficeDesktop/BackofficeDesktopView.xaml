@@ -5,29 +5,27 @@
 		xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
 		xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
 		xmlns:local="clr-namespace:BackofficeDesktop"
-        Title="Backoffice Desktop" Height="293" Width="525">
-	<!--xmlns:collToolbox="clr-namespace:CollapsibleToolbox;assembly=CollapsibleToolbox"-->
-	<Grid>
+        Title="Backoffice Desktop" WindowState="Maximized"  Height="293" Width="525">
+	<Grid Background="PapayaWhip">
 		<DockPanel LastChildFill="True">
 			<StackPanel>
-				<ContentControl x:Name="Toolbox" />
-				<TextBlock>Howdy</TextBlock>
+				<ContentControl x:Name="Toolbox" DockPanel.Dock="Left"/>
 			</StackPanel>
-			<!--<StackPanel>
+			<StackPanel>
 				<TextBlock x:Name="Name" >
-			<i:Interaction.Triggers>
-				<i:EventTrigger EventName="MouseEnter">
-					<cal:ActionMessage MethodName="NameMouseEnter">
-						<cal:Parameter Value="{Binding ElementName=Name,Path=Text}"></cal:Parameter>
-					</cal:ActionMessage>
-				</i:EventTrigger>	
-			</i:Interaction.Triggers>
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="MouseEnter">
+							<cal:ActionMessage MethodName="NameMouseEnter">
+							<cal:Parameter Value="{Binding ElementName=Name,Path=Text}"></cal:Parameter>
+							</cal:ActionMessage>
+						</i:EventTrigger>	
+					</i:Interaction.Triggers>
 				</TextBlock>
 				<TextBlock x:Name="NotName" />
 				<extToolkit:ChildWindow Caption="My Child Window" Width="300" IsModal="False" WindowState="Open" >
 					<Calendar x:Name="DesktopCalendar" />
 				</extToolkit:ChildWindow>
-			</StackPanel>-->
+			</StackPanel>
 		</DockPanel>
 	</Grid>
 </Window>

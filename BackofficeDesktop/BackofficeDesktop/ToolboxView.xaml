@@ -7,29 +7,116 @@
 		    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
             mc:Ignorable="d" 
             d:DesignHeight="196" d:DesignWidth="231">
-	<Grid>
-		<StackPanel Orientation="Horizontal">
-			<TextBlock>This is bogus</TextBlock>
-			<!--<Button x:Name="CollapsedPanelButton" Content="{Binding PanelCaption}" >
+	<UserControl.Resources>
+		<Style TargetType="{x:Type Button}">
+			<Setter Property="SnapsToDevicePixels" Value="true"/>
+			<Setter Property="OverridesDefaultStyle" Value="true"/>
+			<Setter Property="MinHeight" Value="23"/>
+			<Setter Property="MinWidth" Value="75"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Border 
+           x:Name="Border"  
+           CornerRadius="2" 
+           BorderThickness="1"
+           Background="#C0C0C0"
+           BorderBrush="#404040">
+							<ContentPresenter 
+             Margin="2"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             RecognizesAccessKey="True"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsKeyboardFocused" Value="true">
+								<Setter TargetName="Border" Property="BorderBrush" Value="#202020" />
+							</Trigger>
+							<Trigger Property="IsDefaulted" Value="true">
+								<Setter TargetName="Border" Property="BorderBrush" Value="#202020" />
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter TargetName="Border" Property="Background" Value="#F0F080" />
+							</Trigger>
+							<Trigger Property="IsPressed" Value="true">
+								<Setter TargetName="Border" Property="Background" Value="#E0E0E0" />
+								<Setter TargetName="Border" Property="BorderBrush" Value="#606060" />
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter TargetName="Border" Property="Background" Value="#EEEEEE" />
+								<Setter TargetName="Border" Property="BorderBrush" Value="#AAAAAA" />
+								<Setter Property="Foreground" Value="#888888"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
+	<Grid Background="Coral"  TextBlock.FontSize="16">
+		<StackPanel Orientation="Horizontal" >
+			<Button x:Name="CollapsedPanelButton" Content="{Binding PanelCaption}" >
 				<Button.LayoutTransform>
 					<RotateTransform Angle="90"></RotateTransform>
 				</Button.LayoutTransform>
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseEnter">
+						<cal:ActionMessage MethodName="CollapsedPanelButtonMouseEnter">
+						</cal:ActionMessage>
+					</i:EventTrigger>
+					<i:EventTrigger EventName="MouseLeave">
+						<cal:ActionMessage MethodName="CollapsedPanelButtonMouseLeave">
+						</cal:ActionMessage>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
 			</Button>
-			<StackPanel x:Name="FunctionPanel" VerticalAlignment="Stretch" DockPanel.Dock="Left" Visibility="{Binding PanelVisibility}">
-				<StackPanel >
+			<StackPanel x:Name="FunctionPanel" VerticalAlignment="Stretch" Visibility="{Binding PanelVisibility}">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseEnter">
+						<cal:ActionMessage MethodName="FunctionPanelMouseEnter">
+						</cal:ActionMessage>
+					</i:EventTrigger>
+					<i:EventTrigger EventName="MouseLeave">
+						<cal:ActionMessage MethodName="FunctionPanelMouseLeave">
+						</cal:ActionMessage>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+				<StackPanel>
 					<StackPanel Orientation="Horizontal">
-						<TextBlock x:Name="PanelCaption" Text="{Binding PanelCaption}" />
-						<ToggleButton x:Name="PinButton" IsChecked="{Binding IsPinned, Mode=TwoWay}">X</ToggleButton>
+						<TextBlock x:Name="PanelCaption" Text="{Binding PanelCaption}"/>
+						<ToggleButton x:Name="PinButton" IsChecked="{Binding IsPinned, Mode=TwoWay}" ToolTip="Auto Hide">X</ToggleButton>
 					</StackPanel>
+
 					<ListBox x:Name="PanelItems" ItemsSource="{Binding PanelItems}">
+						<!--<ListBox.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding Caption}">
+								</TextBlock>
+							</DataTemplate>
+						</ListBox.ItemTemplate>-->
+
+						
+						<ListBox.ItemsPanel>
+							<ItemsPanelTemplate >
+								<WrapPanel IsItemsHost="True" ToolTip="Hi there" Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}}" />
+							</ItemsPanelTemplate>
+						</ListBox.ItemsPanel>
+
 						<ListBox.ItemTemplate>
 							<DataTemplate>
-								<TextBlock Text="{Binding Caption}" />
+								<Grid>
+									<StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,10,10,10">
+										<TextBlock Text="{Binding Description}" FontWeight="Bold" TextWrapping="Wrap"/>
+										<TextBlock Text="{Binding CommandLine}" Foreground="Gray" TextWrapping="Wrap" />
+									</StackPanel>
+								</Grid>
 							</DataTemplate>
 						</ListBox.ItemTemplate>
+
+
 					</ListBox>
 				</StackPanel>
-			</StackPanel>-->
+			</StackPanel>
 		</StackPanel>
 	</Grid>
 </UserControl>

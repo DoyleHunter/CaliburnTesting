@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackofficeDesktop", "BackofficeDesktop\BackofficeDesktop.csproj", "{4076BCAB-2E81-44EE-B0E4-13F0983E0BBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollapsibleToolbox", "CollapsibleToolbox\CollapsibleToolbox.csproj", "{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,16 +23,6 @@ Global
 		{4076BCAB-2E81-44EE-B0E4-13F0983E0BBC}.Release|Mixed Platforms.Build.0 = Release|x86
 		{4076BCAB-2E81-44EE-B0E4-13F0983E0BBC}.Release|x86.ActiveCfg = Release|x86
 		{4076BCAB-2E81-44EE-B0E4-13F0983E0BBC}.Release|x86.Build.0 = Release|x86
-		{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{990C6E69-95F2-4AA4-BA35-F37605AF5B2D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

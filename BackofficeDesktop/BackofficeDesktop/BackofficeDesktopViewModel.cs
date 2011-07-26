@@ -11,6 +11,7 @@ namespace BackofficeDesktop
 	{
 		private string _name = "Go for it";
 		private string _notName = "Counter";
+		private ToolboxViewModel _toolbox;
 
 		public BackofficeDesktopViewModel()
 		{
@@ -30,8 +31,6 @@ namespace BackofficeDesktop
 			}
 		}
 		
-		private ToolboxViewModel _toolbox;
-
 		public string NotName
 		{
 			get
@@ -60,9 +59,6 @@ namespace BackofficeDesktop
 		{
 			NotName = "Mouse Enter warning" + DateTime.Now.ToString("HH:mm:ss");
 			RaisePropertyChangedEventImmediately("NotName");
-
-
-			// Vanessa Carlton
 		}
 	}
 }
