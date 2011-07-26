@@ -10,7 +10,7 @@
 	<Grid>
 		<DockPanel LastChildFill="True">
 			<StackPanel>
-				<local:ToolboxView />
+				<ContentControl x:Name="Toolbox" />
 				<TextBlock>Howdy</TextBlock>
 			</StackPanel>
 			<!--<StackPanel>

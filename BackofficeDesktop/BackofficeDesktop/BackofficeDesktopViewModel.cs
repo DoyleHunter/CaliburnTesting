@@ -14,8 +14,23 @@ namespace BackofficeDesktop
 
 		public BackofficeDesktopViewModel()
 		{
-
+			Toolbox = new ToolboxViewModel();
 		}
+
+		public ToolboxViewModel Toolbox
+		{
+			get
+			{
+				return _toolbox;
+			}
+			set
+			{
+				_toolbox = value;
+				base.NotifyOfPropertyChange(() => Toolbox);
+			}
+		}
+		
+		private ToolboxViewModel _toolbox;
 
 		public string NotName
 		{
