@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="CollapsibleToolbox.PinnableToolbox"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="174" d:DesignWidth="300">
+	<Grid>
+		<StackPanel Orientation="Horizontal">
+			<Button x:Name="CollapsedPanelButton" Content="{Binding PanelCaption}" >
+				<!--MouseEnter="CollapsedPanelButton_MouseEnter" MouseLeave="CollapsedPanelButton_MouseLeave" Click="CollapsedPanelButton_Click" >-->
+				<Button.LayoutTransform>
+					<RotateTransform Angle="90"></RotateTransform>
+				</Button.LayoutTransform>
+			</Button>
+			<StackPanel x:Name="FunctionPanel" VerticalAlignment="Stretch" DockPanel.Dock="Left" Visibility="{Binding PanelVisibility}">
+				<!--MouseEnter="FunctionPanel_MouseEnter" MouseLeave="FunctionPanel_MouseLeave">-->
+				<StackPanel >
+					<StackPanel Orientation="Horizontal">
+						<TextBlock x:Name="PanelCaption" Text="{Binding PanelCaption}" />
+						<ToggleButton x:Name="PinButton" IsChecked="{Binding IsPinned, Mode=TwoWay}">X</ToggleButton>
+					</StackPanel>
+					<ListBox x:Name="PanelItems" ItemsSource="{Binding PanelItems}">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding Caption}" />
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</UserControl>
