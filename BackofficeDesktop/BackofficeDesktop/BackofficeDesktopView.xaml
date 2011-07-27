@@ -12,6 +12,22 @@
 				<ContentControl x:Name="Toolbox" DockPanel.Dock="Left"/>
 			</StackPanel>
 			<StackPanel>
+				<!--<Canvas x:Name="ToolsCanvas">
+					<extToolkit:ChildWindow Caption="My Child Window" Width="300" IsModal="False" WindowState="Open" >
+						<Calendar x:Name="DesktopCalendar" />
+					</extToolkit:ChildWindow>
+				</Canvas>-->
+				<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Name="PushpinVertical" Width="100" Height="100">
+						<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Stroke="#FF000000" StrokeThickness="1" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 0 0 20 20 -20 20 45 0 5 60 5 -60 45 0 -20 -20 20 -20 z"/>
+				</Canvas>
+				<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Name="PushpinHorizontal" Width="100" Height="100">
+						<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Stroke="#FF000000" StrokeThickness="1" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 0 50 60 -5 0 -45 20 20 20 -20 0 100 -20 -20 -20 20 0 -45 -60 -5 z"/>
+				</Canvas>
+
+			</StackPanel>
+			
+			
+			<!--<StackPanel>
 				<TextBlock x:Name="Name" >
 					<i:Interaction.Triggers>
 						<i:EventTrigger EventName="MouseEnter">
@@ -25,7 +41,9 @@
 				<extToolkit:ChildWindow Caption="My Child Window" Width="300" IsModal="False" WindowState="Open" >
 					<Calendar x:Name="DesktopCalendar" />
 				</extToolkit:ChildWindow>
-			</StackPanel>
+			</StackPanel>-->
+			
+			
 		</DockPanel>
 	</Grid>
 </Window>

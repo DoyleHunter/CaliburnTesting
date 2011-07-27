@@ -8,7 +8,18 @@
             mc:Ignorable="d" 
             d:DesignHeight="196" d:DesignWidth="231">
 	<UserControl.Resources>
-		<Style TargetType="{x:Type Button}">
+		<!--<ResourceDictionary>
+			<DrawingImage x:Key="PinHorizontal">
+				<DrawingImage.Drawing>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<GeometryDrawing Brush="Black" Geometry="m 0 0 20 20 -20 20 45 0 5 60 5 -60 45 0 -20 -20 20 -20 z"/>
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+		</ResourceDictionary>-->
+		<Style x:Key="Duh" TargetType="{x:Type Button}">
 			<Setter Property="SnapsToDevicePixels" Value="true"/>
 			<Setter Property="OverridesDefaultStyle" Value="true"/>
 			<Setter Property="MinHeight" Value="23"/>
@@ -16,17 +27,8 @@
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="{x:Type Button}">
-						<Border 
-           x:Name="Border"  
-           CornerRadius="2" 
-           BorderThickness="1"
-           Background="#C0C0C0"
-           BorderBrush="#404040">
-							<ContentPresenter 
-             Margin="2"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center"
-             RecognizesAccessKey="True"/>
+						<Border x:Name="Border" CornerRadius="2" BorderThickness="1" Background="#C0C0C0" BorderBrush="#404040">
+							<ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
 						</Border>
 						<ControlTemplate.Triggers>
 							<Trigger Property="IsKeyboardFocused" Value="true">
@@ -52,71 +54,100 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
+
+		<SolidColorBrush x:Key="mouseOverColor" Color="Red" />
+		<Style x:Key="myStyle" TargetType="Label">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Label">
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="True">
+								<Setter Property="Foreground" Value="{StaticResource mouseOverColor}" />
+								<!--<Setter Property="Background" >
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+											<GradientStop Color="#FFF3E8D5" Offset="0"/>
+											<GradientStop Color="#FFF49B03" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>-->
+								<Setter Property="FontStyle" Value="Italic" />
+							</Trigger>
+						</ControlTemplate.Triggers>
+						<ContentPresenter />
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
 	</UserControl.Resources>
-	<Grid Background="Coral"  TextBlock.FontSize="16">
-		<StackPanel Orientation="Horizontal" >
-			<Button x:Name="CollapsedPanelButton" Content="{Binding PanelCaption}" >
-				<Button.LayoutTransform>
-					<RotateTransform Angle="90"></RotateTransform>
-				</Button.LayoutTransform>
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="MouseEnter">
-						<cal:ActionMessage MethodName="CollapsedPanelButtonMouseEnter">
-						</cal:ActionMessage>
-					</i:EventTrigger>
-					<i:EventTrigger EventName="MouseLeave">
-						<cal:ActionMessage MethodName="CollapsedPanelButtonMouseLeave">
-						</cal:ActionMessage>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>
-			</Button>
-			<StackPanel x:Name="FunctionPanel" VerticalAlignment="Stretch" Visibility="{Binding PanelVisibility}">
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="MouseEnter">
-						<cal:ActionMessage MethodName="FunctionPanelMouseEnter">
-						</cal:ActionMessage>
-					</i:EventTrigger>
-					<i:EventTrigger EventName="MouseLeave">
-						<cal:ActionMessage MethodName="FunctionPanelMouseLeave">
-						</cal:ActionMessage>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>
-				<StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<TextBlock x:Name="PanelCaption" Text="{Binding PanelCaption}"/>
-						<ToggleButton x:Name="PinButton" IsChecked="{Binding IsPinned, Mode=TwoWay}" ToolTip="Auto Hide">X</ToggleButton>
-					</StackPanel>
 
-					<ListBox x:Name="PanelItems" ItemsSource="{Binding PanelItems}">
-						<!--<ListBox.ItemTemplate>
-							<DataTemplate>
-								<TextBlock Text="{Binding Caption}">
-								</TextBlock>
-							</DataTemplate>
-						</ListBox.ItemTemplate>-->
-
-						
-						<ListBox.ItemsPanel>
-							<ItemsPanelTemplate >
-								<WrapPanel IsItemsHost="True" ToolTip="Hi there" Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}}" />
-							</ItemsPanelTemplate>
-						</ListBox.ItemsPanel>
-
-						<ListBox.ItemTemplate>
-							<DataTemplate>
-								<Grid>
-									<StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,10,10,10">
-										<TextBlock Text="{Binding Description}" FontWeight="Bold" TextWrapping="Wrap"/>
-										<TextBlock Text="{Binding CommandLine}" Foreground="Gray" TextWrapping="Wrap" />
-									</StackPanel>
-								</Grid>
-							</DataTemplate>
-						</ListBox.ItemTemplate>
-
-
-					</ListBox>
-				</StackPanel>
+	<StackPanel x:Name="MainStackPanel" Background="Coral" TextBlock.FontSize="{Binding FontSize}" Orientation="Horizontal" VerticalAlignment="Stretch">
+		<Button x:Name="CollapsedPanelButton" Content="{Binding PanelCaption}" Visibility="{Binding PanelCollapsed}">
+			<Button.LayoutTransform>
+				<RotateTransform Angle="90"></RotateTransform>
+			</Button.LayoutTransform>
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseEnter">
+					<cal:ActionMessage MethodName="CollapsedPanelButtonMouseEnter">
+					</cal:ActionMessage>
+				</i:EventTrigger>
+				<i:EventTrigger EventName="MouseLeave">
+					<cal:ActionMessage MethodName="CollapsedPanelButtonMouseLeave">
+					</cal:ActionMessage>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<StackPanel x:Name="FunctionPanel" Orientation="Vertical" VerticalAlignment="Stretch" Visibility="{Binding PanelVisible}">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseEnter">
+					<cal:ActionMessage MethodName="FunctionPanelMouseEnter">
+					</cal:ActionMessage>
+				</i:EventTrigger>
+				<i:EventTrigger EventName="MouseLeave">
+					<cal:ActionMessage MethodName="FunctionPanelMouseLeave">
+					</cal:ActionMessage>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+			<StackPanel x:Name="ToolGroupsHeaderPanel" Orientation="Horizontal">
+				<TextBlock x:Name="PanelCaption" Padding="5,5,5,5" />
+				<ToggleButton x:Name="PinButton" IsChecked="{Binding IsPinned, Mode=TwoWay}" ToolTip="Auto Hide">X
+					<!--<StackPanel>
+						<ContentControl Template="{StaticResource PinHorizontal}" />
+					</StackPanel>-->
+						<!--<Image Source="{StaticResource PinHorizontal}" />-->
+				</ToggleButton>
 			</StackPanel>
+
+			<ListBox x:Name="ToolGroups">
+				<ListBox.ItemsPanel>
+					<ItemsPanelTemplate >
+						<WrapPanel Orientation="Vertical" IsItemsHost="True" Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}}" />
+					</ItemsPanelTemplate>
+				</ListBox.ItemsPanel>
+
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<StackPanel HorizontalAlignment="Stretch">
+							<Button x:Name="ToolGroupButton" Content="{Binding Caption}" ToolTip="{Binding Description}" FontWeight="Bold" Width="{Binding ActualWidth,ElementName=FunctionPanel}">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="Click">
+										<cal:ActionMessage MethodName="ToolGroupLabelMouseEnter" />
+									</i:EventTrigger>
+								</i:Interaction.Triggers>
+							</Button>
+							<!--<Label x:Name="ToolGroupLabel" Style="{StaticResource myStyle}" Content="{Binding Caption}" ToolTip="{Binding Description}" FontWeight="Bold" HorizontalAlignment="Stretch" Width="{Binding ActualWidth,ElementName=FunctionPanel}" >
+									<i:Interaction.Triggers>
+										<i:EventTrigger EventName="MouseEnter">
+											<cal:ActionMessage MethodName="ToolGroupLabelMouseEnter">
+	
+											</cal:ActionMessage>
+										</i:EventTrigger>
+									</i:Interaction.Triggers>
+								</Label>-->
+						</StackPanel>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
 		</StackPanel>
-	</Grid>
+	</StackPanel>
 </UserControl>
