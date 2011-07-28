@@ -20,6 +20,7 @@ namespace BackofficeDesktop
 		{
 			_toolGroups = new ObservableCollection<BackofficeToolGroup>();
 			BackofficeToolGroup group = new BackofficeToolGroup("Financials", "Financial Applications", "1");
+			
 			_toolGroups.Add(group);
 
 			group = new BackofficeToolGroup("Labor", "Labor Applications", "2");

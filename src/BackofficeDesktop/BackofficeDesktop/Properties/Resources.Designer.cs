@@ -59,25 +59,5 @@ namespace BackofficeDesktop.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-        ///&lt;Canvas xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; Name=&quot;svg2&quot; Width=&quot;544&quot; Height=&quot;602&quot;&gt;&lt;Canvas.Resources/&gt;&lt;Canvas Name=&quot;layer1&quot;&gt;&lt;Path xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; Name=&quot;path2987&quot; Stroke=&quot;#FF000000&quot; StrokeThickness=&quot;1&quot; StrokeLineJoin=&quot;Miter&quot; StrokeStartLineCap=&quot;Flat&quot; StrokeEndLineCap=&quot;Flat&quot; Data=&quot;m 510 490.93361 -5.71428 -162.85714 -42.85715 48.57142 -42.85714 -37.14285 2.85714 74.28571 -185.71428 11.42857 188.57143 5.71 [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string PinHorizontal {
-            get {
-                return ResourceManager.GetString("PinHorizontal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-        ///&lt;Canvas xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; Name=&quot;svg2&quot; Width=&quot;744&quot; Height=&quot;1052&quot;&gt;&lt;Canvas.Resources/&gt;&lt;Canvas Name=&quot;layer1&quot;&gt;&lt;Path xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; Name=&quot;path2987&quot; Stroke=&quot;#FF000000&quot; StrokeThickness=&quot;1&quot; StrokeLineJoin=&quot;Miter&quot; StrokeStartLineCap=&quot;Flat&quot; StrokeEndLineCap=&quot;Flat&quot; Data=&quot;m 448.57143 278.07647 -162.85714 5.71428 48.57142 42.85715 -37.14285 42.85714 74.28571 -2.85714 11.42857 185.71428 5.71429 -1 [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string PinVertical {
-            get {
-                return ResourceManager.GetString("PinVertical", resourceCulture);
-            }
-        }
     }
 }
