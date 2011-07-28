@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Name="svg2" Width="744" Height="1052"><Canvas.Resources/><Canvas Name="layer1"><Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path2987" Stroke="#FF000000" StrokeThickness="1" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 448.57143 278.07647 -162.85714 5.71428 48.57142 42.85715 -37.14285 42.85714 74.28571 -2.85714 11.42857 185.71428 5.71429 -188.57143 71.42857 0 -34.28571 -42.85714 z"/></Canvas></Canvas>

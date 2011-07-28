@@ -70,11 +70,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="ToolboxViewModel.cs" />
     <Compile Include="ViewModels\OptionItemViewModel.cs" />
     <Compile Include="ViewModels\OptionsViewModel.cs" />
@@ -106,13 +101,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AppBootstrapper.cs" />
-<<<<<<< HEAD
-    <None Include="app.config" />
-    <None Include="PinHorizontal.xaml">
-      <Generator>MSBuild:Compile</Generator>
-=======
     <Page Include="Images.xaml">
->>>>>>> 0326b1c3a00346d1062ccd607320da9661476b54
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,6 +144,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
