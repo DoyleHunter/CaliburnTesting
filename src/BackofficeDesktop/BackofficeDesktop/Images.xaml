@@ -103,7 +103,7 @@
 	<!-- NotepadAndPencil http://xamalot.com/asset/2fad16aa-af3e-4f34-9312-14be53668dd7-->
 	<SolidColorBrush x:Key="scb1NotepadAndPencil" Color="#FFFCE94F" ></SolidColorBrush>
 	<SolidColorBrush x:Key="scb2NotepadAndPencil" Color="#48000000" ></SolidColorBrush>
-	<Pen x:Key="penMoney" Brush="#FF886F00" Thickness="1" ></Pen>
+	<Pen x:Key="penNotepadAndPencil" Brush="#FF886F00" Thickness="1" ></Pen>
 	<DrawingBrush x:Key="NotepadAndPencil" Stretch="Uniform">
 		<DrawingBrush.Drawing>
 			<DrawingGroup>
@@ -179,14 +179,14 @@
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<DrawingGroup>
-						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penMoney}" Geometry="M8.500,3.500C8.500,2.948,8.948,2.500,9.500,2.500L9.500,2.500C10.052,2.500,10.500,2.948,10.500,3.500L10.500,6.500C10.500,7.052,10.052,7.500,9.500,7.500L9.500,7.500C8.948,7.500,8.500,7.052,8.500,6.500z" ></GeometryDrawing>
-						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penMoney}" Geometry="M12.500,3.500C12.500,2.948,12.948,2.500,13.500,2.500L13.500,2.500C14.052,2.500,14.500,2.948,14.500,3.500L14.500,6.500C14.500,7.052,14.052,7.500,13.500,7.500L13.500,7.500C12.948,7.500,12.500,7.052,12.500,6.500z" ></GeometryDrawing>
-						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penMoney}" Geometry="M16.500,3.500C16.500,2.948,16.948,2.500,17.500,2.500L17.500,2.500C18.052,2.500,18.500,2.948,18.500,3.500L18.500,6.500C18.500,7.052,18.052,7.500,17.500,7.500L17.500,7.500C16.948,7.500,16.500,7.052,16.500,6.500z" ></GeometryDrawing>
-						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penMoney}" Geometry="M20.500,3.500C20.500,2.948,20.948,2.500,21.500,2.500L21.500,2.500C22.052,2.500,22.500,2.948,22.500,3.500L22.500,6.500C22.500,7.052,22.052,7.500,21.500,7.500L21.500,7.500C20.948,7.500,20.500,7.052,20.500,6.500z" ></GeometryDrawing>
-						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penMoney}" Geometry="M24.500,3.500C24.500,2.948,24.948,2.500,25.500,2.500L25.500,2.500C26.052,2.500,26.500,2.948,26.500,3.500L26.500,6.500C26.500,7.052,26.052,7.500,25.500,7.500L25.500,7.500C24.948,7.500,24.500,7.052,24.500,6.500z" ></GeometryDrawing>
-						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penMoney}" Geometry="M28.500,3.500C28.500,2.948,28.948,2.500,29.500,2.500L29.500,2.500C30.052,2.500,30.500,2.948,30.500,3.500L30.500,6.500C30.500,7.052,30.052,7.500,29.500,7.500L29.500,7.500C28.948,7.500,28.500,7.052,28.500,6.500z" ></GeometryDrawing>
-						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penMoney}" Geometry="M32.500,3.500C32.500,2.948,32.948,2.500,33.500,2.500L33.500,2.500C34.052,2.500,34.500,2.948,34.500,3.500L34.500,6.500C34.500,7.052,34.052,7.500,33.500,7.500L33.500,7.500C32.948,7.500,32.500,7.052,32.500,6.500z" ></GeometryDrawing>
-						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penMoney}" Geometry="M36.500,3.500C36.500,2.948,36.948,2.500,37.500,2.500L37.500,2.500C38.052,2.500,38.500,2.948,38.500,3.500L38.500,6.500C38.500,7.052,38.052,7.500,37.500,7.500L37.500,7.500C36.948,7.500,36.500,7.052,36.500,6.500z" ></GeometryDrawing>
+						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penNotepadAndPencil}" Geometry="M8.500,3.500C8.500,2.948,8.948,2.500,9.500,2.500L9.500,2.500C10.052,2.500,10.500,2.948,10.500,3.500L10.500,6.500C10.500,7.052,10.052,7.500,9.500,7.500L9.500,7.500C8.948,7.500,8.500,7.052,8.500,6.500z" ></GeometryDrawing>
+						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penNotepadAndPencil}" Geometry="M12.500,3.500C12.500,2.948,12.948,2.500,13.500,2.500L13.500,2.500C14.052,2.500,14.500,2.948,14.500,3.500L14.500,6.500C14.500,7.052,14.052,7.500,13.500,7.500L13.500,7.500C12.948,7.500,12.500,7.052,12.500,6.500z" ></GeometryDrawing>
+						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penNotepadAndPencil}" Geometry="M16.500,3.500C16.500,2.948,16.948,2.500,17.500,2.500L17.500,2.500C18.052,2.500,18.500,2.948,18.500,3.500L18.500,6.500C18.500,7.052,18.052,7.500,17.500,7.500L17.500,7.500C16.948,7.500,16.500,7.052,16.500,6.500z" ></GeometryDrawing>
+						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penNotepadAndPencil}" Geometry="M20.500,3.500C20.500,2.948,20.948,2.500,21.500,2.500L21.500,2.500C22.052,2.500,22.500,2.948,22.500,3.500L22.500,6.500C22.500,7.052,22.052,7.500,21.500,7.500L21.500,7.500C20.948,7.500,20.500,7.052,20.500,6.500z" ></GeometryDrawing>
+						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penNotepadAndPencil}" Geometry="M24.500,3.500C24.500,2.948,24.948,2.500,25.500,2.500L25.500,2.500C26.052,2.500,26.500,2.948,26.500,3.500L26.500,6.500C26.500,7.052,26.052,7.500,25.500,7.500L25.500,7.500C24.948,7.500,24.500,7.052,24.500,6.500z" ></GeometryDrawing>
+						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penNotepadAndPencil}" Geometry="M28.500,3.500C28.500,2.948,28.948,2.500,29.500,2.500L29.500,2.500C30.052,2.500,30.500,2.948,30.500,3.500L30.500,6.500C30.500,7.052,30.052,7.500,29.500,7.500L29.500,7.500C28.948,7.500,28.500,7.052,28.500,6.500z" ></GeometryDrawing>
+						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penNotepadAndPencil}" Geometry="M32.500,3.500C32.500,2.948,32.948,2.500,33.500,2.500L33.500,2.500C34.052,2.500,34.500,2.948,34.500,3.500L34.500,6.500C34.500,7.052,34.052,7.500,33.500,7.500L33.500,7.500C32.948,7.500,32.500,7.052,32.500,6.500z" ></GeometryDrawing>
+						<GeometryDrawing Brush="{StaticResource scb1NotepadAndPencil}" Pen="{StaticResource penNotepadAndPencil}" Geometry="M36.500,3.500C36.500,2.948,36.948,2.500,37.500,2.500L37.500,2.500C38.052,2.500,38.500,2.948,38.500,3.500L38.500,6.500C38.500,7.052,38.052,7.500,37.500,7.500L37.500,7.500C36.948,7.500,36.500,7.052,36.500,6.500z" ></GeometryDrawing>
 					</DrawingGroup>
 					<DrawingGroup>
 						<GeometryDrawing Brush="{StaticResource scb2NotepadAndPencil}" Geometry="M9.000,12.000L38.000,12.000 38.000,13.000 9.000,13.000z" ></GeometryDrawing>
