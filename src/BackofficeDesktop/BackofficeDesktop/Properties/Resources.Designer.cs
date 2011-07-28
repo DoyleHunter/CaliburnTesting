@@ -59,6 +59,7 @@ namespace BackofficeDesktop.Properties {
                 resourceCulture = value;
             }
         }
+<<<<<<< HEAD
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -79,5 +80,7 @@ namespace BackofficeDesktop.Properties {
                 return ResourceManager.GetString("PinVertical", resourceCulture);
             }
         }
+=======
+>>>>>>> 0326b1c3a00346d1062ccd607320da9661476b54
     }
 }
