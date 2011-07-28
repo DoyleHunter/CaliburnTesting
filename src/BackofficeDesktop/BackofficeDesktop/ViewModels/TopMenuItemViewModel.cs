@@ -9,11 +9,11 @@ namespace BackofficeDesktop.ViewModels
 {
     public class TopMenuItemViewModel
     {
-        private EventAggregator _pubsub = new EventAggregator();
+        private readonly IEventAggregator _pubsub;
 
-        public TopMenuItemViewModel()
+        public TopMenuItemViewModel(IEventAggregator pubsub)
         {
-            
+            _pubsub = pubsub;
         }
 
         public string Caption { get; set; }

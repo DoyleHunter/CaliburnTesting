@@ -7,12 +7,11 @@ namespace BackofficeDesktop.ViewModels
 {
     public class OptionsViewModel : IHandle<TopMenuItemSelected>
     {
-        private readonly EventAggregator _pubsub;
+        private readonly IEventAggregator _pubsub;
 
-        public OptionsViewModel()
+        public OptionsViewModel(IEventAggregator pubsub)
         {
-            _pubsub = new EventAggregator();
-            _pubsub.Subscribe(this);
+            _pubsub = pubsub;
         }
 
         public void Handle(TopMenuItemSelected message)
@@ -25,20 +24,5 @@ namespace BackofficeDesktop.ViewModels
         }
 
         public ObservableCollection<OptionItemViewModel> OptionItems { get; set; }
-    }
-
-    public class OptionItemViewModel
-    {
-        private readonly string _caption;
-
-        public OptionItemViewModel(string caption)
-        {
-            _caption = caption;
-        }
-
-        public string Caption
-        {
-            get { return _caption; }
-        }
     }
 }
