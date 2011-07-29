@@ -1,12 +1,4 @@
-﻿<UserControl x:Class="BackofficeDesktop.ToolboxView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-	 		 xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-		    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
-            mc:Ignorable="d" 
-            d:DesignHeight="196" d:DesignWidth="231">
+﻿<UserControl x:Class="BackofficeDesktop.ToolboxView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" mc:Ignorable="d" d:DesignHeight="196" d:DesignWidth="231">
 	<UserControl.Resources>
 		<!--<ResourceDictionary>
 			<DrawingImage x:Key="PinHorizontal">
@@ -20,15 +12,15 @@
 			</DrawingImage>
 		</ResourceDictionary>-->
 		<Style x:Key="Duh" TargetType="{x:Type Button}">
-			<Setter Property="SnapsToDevicePixels" Value="true"/>
-			<Setter Property="OverridesDefaultStyle" Value="true"/>
-			<Setter Property="MinHeight" Value="23"/>
-			<Setter Property="MinWidth" Value="75"/>
+			<Setter Property="SnapsToDevicePixels" Value="true" />
+			<Setter Property="OverridesDefaultStyle" Value="true" />
+			<Setter Property="MinHeight" Value="23" />
+			<Setter Property="MinWidth" Value="75" />
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="{x:Type Button}">
 						<Border x:Name="Border" CornerRadius="2" BorderThickness="1" Background="#C0C0C0" BorderBrush="#404040">
-							<ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+							<ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
 						</Border>
 						<ControlTemplate.Triggers>
 							<Trigger Property="IsKeyboardFocused" Value="true">
@@ -47,7 +39,7 @@
 							<Trigger Property="IsEnabled" Value="false">
 								<Setter TargetName="Border" Property="Background" Value="#EEEEEE" />
 								<Setter TargetName="Border" Property="BorderBrush" Value="#AAAAAA" />
-								<Setter Property="Foreground" Value="#888888"/>
+								<Setter Property="Foreground" Value="#888888" />
 							</Trigger>
 						</ControlTemplate.Triggers>
 					</ControlTemplate>
@@ -88,39 +80,36 @@
 			</Button.LayoutTransform>
 			<i:Interaction.Triggers>
 				<i:EventTrigger EventName="MouseEnter">
-					<cal:ActionMessage MethodName="CollapsedPanelButtonMouseEnter">
-					</cal:ActionMessage>
+					<cal:ActionMessage MethodName="CollapsedPanelButtonMouseEnter"></cal:ActionMessage>
 				</i:EventTrigger>
 				<i:EventTrigger EventName="MouseLeave">
-					<cal:ActionMessage MethodName="CollapsedPanelButtonMouseLeave">
-					</cal:ActionMessage>
+					<cal:ActionMessage MethodName="CollapsedPanelButtonMouseLeave"></cal:ActionMessage>
 				</i:EventTrigger>
 			</i:Interaction.Triggers>
 		</Button>
 		<StackPanel x:Name="FunctionPanel" Orientation="Vertical" VerticalAlignment="Stretch" Visibility="{Binding PanelVisible}">
 			<i:Interaction.Triggers>
 				<i:EventTrigger EventName="MouseEnter">
-					<cal:ActionMessage MethodName="FunctionPanelMouseEnter">
-					</cal:ActionMessage>
+					<cal:ActionMessage MethodName="FunctionPanelMouseEnter"></cal:ActionMessage>
 				</i:EventTrigger>
 				<i:EventTrigger EventName="MouseLeave">
-					<cal:ActionMessage MethodName="FunctionPanelMouseLeave">
-					</cal:ActionMessage>
+					<cal:ActionMessage MethodName="FunctionPanelMouseLeave"></cal:ActionMessage>
 				</i:EventTrigger>
 			</i:Interaction.Triggers>
 			<StackPanel x:Name="ToolGroupsHeaderPanel" Orientation="Horizontal">
 				<TextBlock x:Name="PanelCaption" Padding="5,5,5,5" />
-				<ToggleButton x:Name="PinButton" IsChecked="{Binding IsPinned, Mode=TwoWay}" ToolTip="Auto Hide">X
+				<ToggleButton x:Name="PinButton" IsChecked="{Binding IsPinned, Mode=TwoWay}" ToolTip="Auto Hide">
+					X
 					<!--<StackPanel>
 						<ContentControl Template="{StaticResource PinHorizontal}" />
 					</StackPanel>-->
-						<!--<Image Source="{StaticResource PinHorizontal}" />-->
+					<!--<Image Source="{StaticResource PinHorizontal}" />-->
 				</ToggleButton>
 			</StackPanel>
 
 			<ListBox x:Name="ToolGroups">
 				<ListBox.ItemsPanel>
-					<ItemsPanelTemplate >
+					<ItemsPanelTemplate>
 						<WrapPanel Orientation="Vertical" IsItemsHost="True" Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}}" />
 					</ItemsPanelTemplate>
 				</ListBox.ItemsPanel>

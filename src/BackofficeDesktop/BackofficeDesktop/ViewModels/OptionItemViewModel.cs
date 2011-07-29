@@ -1,17 +1,26 @@
-﻿namespace BackofficeDesktop.ViewModels
+﻿using System.ComponentModel.Composition;
+using BackofficeDesktop.Services;
+
+namespace BackofficeDesktop.ViewModels
 {
+    [PartCreationPolicy(CreationPolicy.NonShared)]
+    [Export(typeof (OptionItemViewModel))]
     public class OptionItemViewModel
     {
-        private readonly string _caption;
+        private readonly AppLauncher _appLauncher;
 
-        public OptionItemViewModel(string caption)
+        [ImportingConstructor]
+        public OptionItemViewModel(AppLauncher launcher)
         {
-            _caption = caption;
+            _appLauncher = launcher;
         }
 
-        public string Caption
+        public string Caption { get; set; }
+        public string CommandLine { get; set; }
+
+        public void RunItem()
         {
-            get { return _caption; }
+            _appLauncher.Launch(CommandLine);
         }
     }
 }

@@ -70,6 +70,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Services\AppLauncher.cs" />
+    <Compile Include="Services\ApplicationItem.cs" />
+    <Compile Include="Services\NavigationDataFeed.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ToolboxViewModel.cs" />
     <Compile Include="ViewModels\OptionItemViewModel.cs" />
     <Compile Include="ViewModels\OptionsViewModel.cs" />

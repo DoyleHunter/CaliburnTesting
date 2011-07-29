@@ -1,15 +1,19 @@
-﻿using Caliburn.Micro;
+﻿using System.ComponentModel.Composition;
+using Caliburn.Micro;
 
 namespace BackofficeDesktop.ViewModels
 {
-    public interface IShell 
-    {}
+    public interface IShell
+    {
+    }
 
+    [Export(typeof (IShell))]
     public class ShellViewModel : PropertyChangedBase, IShell
     {
-        private readonly TopMenuViewModel _topMenu;
         private readonly OptionsViewModel _options;
+        private readonly TopMenuViewModel _topMenu;
 
+        [ImportingConstructor]
         public ShellViewModel(TopMenuViewModel topMenu, OptionsViewModel options)
         {
             _topMenu = topMenu;
@@ -25,8 +29,5 @@ namespace BackofficeDesktop.ViewModels
         {
             get { return _options; }
         }
-
     }
-
-    
 }
